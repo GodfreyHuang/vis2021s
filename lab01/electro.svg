@@ -9,7 +9,7 @@
   <!--<circle cx="128" cy="128" r="10" stroke="red" fill="none"  />-->
 
   <rect width="512" height="512" stroke="red" fill="rgba(255,255,255,0.95)" opacity="0.95" ></rect>
-
+  <rect id="B" x="5" y="128" fill="#6EA9FF" stroke="#036EB7" stroke-width="3" width="379" height="256"/>
   <text x="2" y="12" font-size="12" text-anchor="start" fill="red">0</text>
   <path d="M256  64 H0 H512" stroke="lightgray" fill="white"></path>
   <text x="2" y="68" font-size="12" text-anchor="start" fill="red">64</text>
@@ -46,34 +46,34 @@
   <path d="M256 256 V270 V242 M256 256 H270 H242" stroke="black" fill="white"></path>
   <text x="254" y="250" font-size="16" text-anchor="middle" fill="red">(256, 256)</text>
 
-  <path d="M8 384 V125" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M384 384 V125" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M384 384 H8" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>  
-  <path d="M384 128 H8" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M384 235 H280" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M8 235 H115" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M165 325 A37 90, 0, 0, 0, 220 325" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M8 384 V125" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
+  <path d="M384 384 V125" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
+  <path d="M384 384 H8" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>  
+  <path d="M384 128 H8" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
+  <path d="M384 235 H280" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
+  <path d="M8 235 H115" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
+  <path d="M165 325 A37 90, 0, 0, 0, 220 325" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
 
-  <path d="M192 10 A90 30, -45, 0, 0, 195 64" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>  
-  <path d="M195 64 A145 34, -40, 0, 1, 192 128" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M192 10 A90 30, -45, 0, 0, 195 64" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>  
+  <path d="M195 64 A145 34, -40, 0, 1, 192 128" stroke-width="10" stroke="#000" fill="none" opacity="0.6"/>
 
-  <path d="M165 488 H225" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M128 415 A104 19, -45, 0, 0, 120 470" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M260 415 A104 19, 45, 0, 1, 268 470" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M145 384 A145 110, 0, 0, 0, 128 448" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M242 384 A145 110, 0, 0, 1, 256 448" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M165 488 H225" stroke-width="10" stroke="#F0F" fill="none" opacity="0.6"/>
+  <path d="M128 415 A104 19, -45, 0, 0, 120 470" stroke-width="10" stroke="#F00" fill="none" opacity="0.6"/>
+  <path d="M260 415 A104 19, 45, 0, 1, 268 470" stroke-width="10" stroke="#F00" fill="none" opacity="0.6"/>
+  <path d="M145 384 A145 110, 0, 0, 0, 128 448" stroke-width="10" stroke="#0FF" fill="none" opacity="0.6"/>
+  <path d="M242 384 A145 110, 0, 0, 1, 256 448" stroke-width="10" stroke="#0FF" fill="none" opacity="0.6"/>
 
-  <path d="M128 448 A35 30, 0, 0, 0, 148 495" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M128 448 A25 30, 10, 0, 1, 165 468" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M148 495 A60 30, 40, 0, 0, 165 468" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M128 448 A35 30, 0, 0, 0, 148 495" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
+  <path d="M128 448 A25 30, 10, 0, 1, 165 468" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
+  <path d="M148 495 A60 30, 40, 0, 0, 165 468" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
 
-  <path d="M256 448 A38 30, 0, 0, 1, 240 495" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M256 448 A20 30, 10, 0, 0, 225 468" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M240 495 A20 30, 40, 0, 1, 225 468" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M256 448 A38 30, 0, 0, 1, 240 495" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
+  <path d="M256 448 A20 30, 10, 0, 0, 225 468" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
+  <path d="M240 495 A20 30, 40, 0, 1, 225 468" stroke-width="10" stroke="#0F0" fill="none" opacity="0.6"/>
 
-  <path d="M275 425 A80 90, 0, 0, 1, 370 420" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M370 420 A70 140, 0, 0, 0, 445 390" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
-  <path d="M438 363 A8 8, 0, 0, 0, 468 375Z" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
+  <path d="M275 425 A80 90, 0, 0, 1, 370 420" stroke-width="10" stroke="#FF0" fill="none" opacity="0.6"/>
+  <path d="M370 420 A70 140, 0, 0, 0, 445 390" stroke-width="10" stroke="#FF0" fill="none" opacity="0.6"/>
+  <path d="M438 363 A8 8, 0, 0, 0, 468 375Z" stroke-width="10" stroke="#0FF" fill="none" opacity="0.6"/>
 
   <path d="M460 340 L450 365" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>
   <path d="M470 344 L458 368" stroke-width="10" stroke="#F0F" fill="none" opacity="0.3"/>

@@ -57,8 +57,13 @@
   <path d="M480 64 A125 100, 55, 0, 0, 335 175" stroke-width="10" stroke="#00F" fill="none" opacity="0.3"/>
 
   <path d="M335 175 A110 80, 0, 0, 0, 175 175" stroke-width="10" stroke="#00F" fill="none" opacity="0.3"/>
+  <path d="M128 256 A110 80, 0, 0, 1, 200 256" stroke-width="10" stroke="#00F" fill="none" opacity="0.3"/>
+  <path d="M312 256 A110 80, 0, 0, 1, 384 256" stroke-width="10" stroke="#00F" fill="none" opacity="0.3"/>
+  <path d="M335 360 A110 80, 0, 0, 1, 175 360" stroke-width="10" stroke="#EA0000" fill="none" opacity="0.3"/>
 
-  <!--text x="410" y="340" font-size="16" text-anchor="middle" fill="red">(410, 320)</text>
+  <circle fill="#000000" stroke="#921AFF" stroke-width="5" cx="160" cy="275" r="18"/>  
+  <circle fill="#000000" stroke="#921AFF" stroke-width="5" cx="345" cy="275" r="18"/>  
+<!--text x="410" y="340" font-size="16" text-anchor="middle" fill="red">(410, 320)</text>
   <circle id="c1" cx="410" cy="320" r="1" stroke="red" fill="none">
     <animate attributeName="r" to="10" dur="2s" repeatCount="indefinite"/>
   </circle>
