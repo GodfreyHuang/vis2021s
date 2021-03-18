@@ -60,5 +60,24 @@
   <circle fill="#FF4343" stroke="#FF4343" stroke-width="5" cx="150" cy="300" r="24"/>  
   <circle fill="#FF4343" stroke="#FF4343" stroke-width="5" cx="355" cy="300" r="24"/>
   <ellipse fill="#F9F900" stroke="#F9F900" stroke-width="5" cx="256" cy="340" rx="20" ry="14"/>  
+  <!--<circle cx="0" cy="0" r="1" stroke="blue" fill="none">
+    <animateMotion dur="6s" path="M270 120 A128 128, 0, 1, 0, 350 115" repeatCount="indefinite" rotate="auto"/>
+    <animate attributeName="r" to="15" dur="6s" repeatCount="indefinite"/>
+  </circle>-->
+  <circle id="run_kitty" cx="0" cy="0" r="5" stroke="blue" fill="none">
+    <animateMotion dur="6s" path="M175 128 A30 25, 60, 1, 0, 80 190
+                                           ,120 110, 0, 0, 0, 56 256
+                                           ,115 135, -90, 0, 0, 456 256
+                                           ,150 110, 0, 0, 0, 448 220
+                                           ,210 60, -50, 0, 0, 435 155
+                                           ,150 100, 0, 0, 0, 415 95
+                                           ,140 200, 0, 0, 0, 350 115
+                                           ,60 110, 0, 0, 0, 270 120
+                                           ,150 110, 0, 0, 0, 175 128"
+                                           repeatCount="indefinite" rotate="auto">
+      <!--<mpath xlink:href="#kitty"/>--> <!--帶入kitty的path路徑-->  
+    </animateMotion>
+  <animate attributeName="r" to="30" dur="6s" repeatCount="indefinite"/>
+  </circle>
 </svg>
     
