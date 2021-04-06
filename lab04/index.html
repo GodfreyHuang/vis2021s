@@ -101,7 +101,6 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                             else return d;
                         })
                         .append("img")
-                        //.append(function(d, i) { if((i == 4 || i == 5) && (d == 1 || d == 0)) return "img"})
                         .attr("src", 
                         function(d, i) { 
                             if((i == 4 || i == 5) && (d == 1 || d == 0))
@@ -109,8 +108,6 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                                 if(d == 1) return "./92.png";
                                 else return "./93.png";
                             }
-                            /*if (i % 2 == 0) return "./92.png"; 
-                            else return "./93.png"; */
                         })
                         .attr("x", "0")
                         .attr("y", "0")
