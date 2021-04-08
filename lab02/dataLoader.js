@@ -3,7 +3,7 @@ var title = "treemap";
 
 function dataLoader(text,cb) {
 	//有些csv資料的seperator是使用分號，這邊統一使用逗號座分隔
-    var uri = 'data:text/plain;base64,' + Base64.encode(text.replace(/;/g, ','))
+    var uri = text//'data:text/plain;base64,' + Base64.encode(text.replace(/;/g, ','))
     var dsv = d3.dsvFormat(",")
 
     d3.csv(uri, function(rawData){
