@@ -1,14 +1,153 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>D3 Page Template</title>
-    <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+    <title>Lab5_d3v3.0</title>
+    <!-- <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script>-->  <!--v6.5.0 --> 
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> <!-- v3.0 -->
+    <style type="text/css">
+    	
+    	div.bar {
+    		border: 1px black solid;
+    		padding: 5px;
+    		margin: 5px 5px 5px 5px;
+    		display: inline-block;
+    		width: 10px;
+    		height: 100px;
+    		background-color: mediumvioletred;
+    	}
+
+    	body {
+    		border: 1px magenta solid;
+    		padding: 100px;
+    	}
+
+        div{
+            vertical-align: bottom;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: yellow;
+        }
+
+        svg{
+            background-color: rgb(115, 156, 194);
+        }
+    </style>
 </head>
 <body>
+
+
     <script type="text/javascript">
       // Your beautiful D3 code will go here
+
+      d3.csv("data.csv", function(data){
+          /*d3.select("body")
+            .selectAll("div")	
+            .data(data)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d){
+                return d['頻率'] + "2px";
+            })*/
+
+          var w = 1200;
+          var h = 1000;
+          var barPadding = 1;
+
+          var svg = d3.select("body")
+                      .append("svg")
+                      .attr("width", w)
+                      .attr("height", h)
+                      /*.style("fill", function(d){
+                          return "rgb(115, 156, 194)";
+                      })*/
+          
+          svg.selectAll("rect")
+             .data(data)
+             .enter()
+             .append("rect")
+             .attr("x", function(d, i) {
+                 return i * (w /28);
+                //console.log(d['頻率']);
+               // return d['頻率'];  
+             })
+             .attr("y", function(d){
+                 return h - (d['頻率'] * 15);
+             })
+             //.attr("y", 0)
+             .attr("width", 40)
+             .attr("height", function(d){
+                 return d['頻率'] * 15;
+             }) 
+             .attr("fill", function(d) {
+                 return "rgb(199, 21, " + Math.round(d['頻率'] * 10) + ")";
+             });
+
+          svg.selectAll("text")
+             .data(data)
+             .enter()
+             .append("text")
+             .text(function(d){
+                 return d['頻率'];
+             })
+             .attr("x", function(d, i) {
+                 return i * (w / 28) + 10;
+             })
+             .attr("y", function(d) {
+                 if(d['頻率'] == 0){
+                    return h - (d['頻率'] * 15);
+                 }
+                 else{
+                    return h - (d['頻率'] * 15) + 15;
+                 }                     
+             })
+             .attr("font-family", "sans-serif")
+             .attr("font-size", "15px")
+             .attr("fill", "white");
+      });
+
+      /*d3.text("data.csv", function(data){
+          var parsedCSV = d3.csv.parseRows(data);
+          //var container = d3.select("body");
+          var w = 500;
+          var h = 500;
+          var barPadding = 1;
+
+          var svg = d3.select("body")
+                      .append("svg")
+                      .attr("width", w)
+                      .attr("height", h);
+          
+          svg.selectAll("rect")
+             .data(data)
+             .enter()
+             .append("rect")
+             .filter(function(d, i){
+			    return (i != 0);
+             })
+             //.attr("x", 20)
+             .attr("x", function(d, i) {
+                 return d['頻率'];
+                //console.log(d['頻率']);
+               // return d['頻率'];  
+             })
+             .attr("y", 100)
+             //.attr("y", function(d){
+             //    return h - d[1]
+             //})
+             .attr("width", 20)
+             .attr("height", 100)
+             
+             
+             //.attr("y", 0)
+             //.attr("width", 20)
+             //.attr("height", function(d){
+                // return d[1] * 4
+             //}); 
+      });*/
+        
     </script>
-  </body>
+</body>
 </html>
   
