@@ -51,6 +51,8 @@
       var h = window.innerHeight*2/3;
       var barPadding = 1;
           //var margin = 50;
+      var hMax = 39;
+      var hProp = h / hMax;
 
       var margin = {top:10, bottom:30, left:30, right:10}
 
@@ -90,12 +92,13 @@
                  return xScale(d.Date);
              })
              .attr("y", function(d){
-                 return h - (d.Amount * 15);
+                 //return h - (d.Amount * 10);
+                 return h - (d.Amount * hProp);
              })
              .attr("width", xScale.bandwidth() + 2)
              //.attr("height", 0)
              .attr("height", function(d){
-                 return d.Amount * 15;
+                 return d.Amount * hProp;
              })
                          
              /*.data(data)
@@ -134,14 +137,14 @@
                  return d.Amount;
              })
              .attr("x", function(d, i) {
-                 return i * (w / 28) + 4;
+                 return i * (w / 28) + 15;
              })
              .attr("y", function(d) {
                  if(d.Amount == 0){
-                    return h - (d.Amount * 15);
+                    return h - (d.Amount * hProp);
                  }
                  else{
-                    return h - (d.Amount * 15) + 15;
+                    return h - (d.Amount * hProp) + 10;
                  }                     
              })
              .attr("font-family", "sans-serif")
