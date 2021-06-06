@@ -1,14 +1,787 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>D3 Page Template</title>
+    <title>Lab 8</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
+
+        h1, div {
+          background-color: rgba(255, 255, 0, 0.1);
+          font-family: 'Noto Serif JP', serif;
+          font-size: 24pt;
+          border: solid 1px black;
+          width: 90%;
+          margin: 5px auto;
+          padding: 10px;
+        }
+
+        div {
+          font-size: 12pt;
+        }
+        
+        body {
+          background-color: rgba(255, 128, 255, 0.1);
+        }
+
+        video:hover {
+          box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        .svgline {
+          background-color: rgba(240, 0, 240, 0.562);
+        }
+        /*這裡開始是"黃"的動畫*/
+        #path835 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 232;
+          animation: dash835 5s linear forwards;
+        }
+        @keyframes dash835{
+          0%,
+          33%{
+            stroke-dashoffset: 232;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path839 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 233;
+          animation: dash839 5s linear forwards;
+        }
+        @keyframes dash839{
+          0%,
+          33%{
+            stroke-dashoffset: 233;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path843 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 234;
+          animation: dash843 5s linear forwards;
+        }
+        @keyframes dash843{
+          0%,
+          33%{
+            stroke-dashoffset: 234;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path845 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 235;
+          animation: dash845 5s linear forwards;
+        }
+        @keyframes dash845{
+          0%,
+          33%{
+            stroke-dashoffset: 235;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path847 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 236;
+          animation: dash847 5s linear forwards;
+        }
+        @keyframes dash847{
+          0%,
+          33%{
+            stroke-dashoffset: 236;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path849 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 237;
+          animation: dash849 5s linear forwards;
+        }
+        @keyframes dash849{
+          0%,
+          33%{
+            stroke-dashoffset: 237;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path853 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 238;
+          animation: dash853 5s linear forwards;
+        }
+        @keyframes dash853{
+          0%,
+          33%{
+            stroke-dashoffset: 238;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path855 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 239;
+          animation: dash855 5s linear forwards;
+        }
+        @keyframes dash855{
+          0%,
+          33%{
+            stroke-dashoffset: 239;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path857 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 240;
+          animation: dash857 5s linear forwards;
+        }
+        @keyframes dash857{
+          0%,
+          33%{
+            stroke-dashoffset: 240;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+     
+        #path859 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 241;
+          animation: dash859 5s linear forwards;
+        }
+        @keyframes dash859{
+          0%,
+          33%{
+            stroke-dashoffset: 241;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+        
+        #path861 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 242;
+          animation: dash861 5s linear forwards;
+        }
+        @keyframes dash861{
+          0%,
+          33%{
+            stroke-dashoffset: 242;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+        
+        #path863 {
+          stroke-width: 12;
+          clip-path: url("#cp");
+          stroke-dasharray: 243;
+          animation: dash863 5s linear forwards;
+        }
+        @keyframes dash863{
+          0%,
+          33%{
+            stroke-dashoffset: 243;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /*這裡開始是"禎"的動畫*/
+        #path01 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 232;
+          animation: dash01 5s linear forwards;
+        }
+        @keyframes dash01{
+          0%,
+          33%{
+            stroke-dashoffset: 232;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path02 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 233;
+          animation: dash02 5s linear forwards;
+        }
+        @keyframes dash02{
+          0%,
+          33%{
+            stroke-dashoffset: 233;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path03 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 234;
+          animation: dash03 5s linear forwards;
+        }
+        @keyframes dash03{
+          0%,
+          33%{
+            stroke-dashoffset: 234;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path04 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 235;
+          animation: dash04 5s linear forwards;
+        }
+        @keyframes dash04{
+          0%,
+          33%{
+            stroke-dashoffset: 235;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path05 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 236;
+          animation: dash05 5s linear forwards;
+        }
+        @keyframes dash05{
+          0%,
+          33%{
+            stroke-dashoffset: 236;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path06 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 237;
+          animation: dash06 5s linear forwards;
+        }
+        @keyframes dash06{
+          0%,
+          33%{
+            stroke-dashoffset: 237;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path07 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 238;
+          animation: dash07 5s linear forwards;
+        }
+        @keyframes dash07{
+          0%,
+          33%{
+            stroke-dashoffset: 238;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path08 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 239;
+          animation: dash08 5s linear forwards;
+        }
+        @keyframes dash08{
+          0%,
+          33%{
+            stroke-dashoffset: 239;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path09 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 240;
+          animation: dash09 5s linear forwards;
+        }
+        @keyframes dash09{
+          0%,
+          33%{
+            stroke-dashoffset: 240;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+     
+        #path10 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 241;
+          animation: dash10 5s linear forwards;
+        }
+        @keyframes dash10{
+          0%,
+          33%{
+            stroke-dashoffset: 241;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+        
+        #path11 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 242;
+          animation: dash11 5s linear forwards;
+        }
+        @keyframes dash11{
+          0%,
+          33%{
+            stroke-dashoffset: 242;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+        
+        #path12 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 243;
+          animation: dash12 5s linear forwards;
+        }
+        @keyframes dash12{
+          0%,
+          33%{
+            stroke-dashoffset: 243;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }   
+
+        #path13 {
+          stroke-width: 12;
+          clip-path: url("#cp2");
+          stroke-dasharray: 243;
+          animation: dash13 5s linear forwards;
+        }
+        @keyframes dash13{
+          0%,
+          33%{
+            stroke-dashoffset: 243;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }    
+
+        /*這裡開始是"安"的動畫*/
+        #path21 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 232;
+          animation: dash21 5s linear forwards;
+        }
+        @keyframes dash21{
+          0%,
+          33%{
+            stroke-dashoffset: 232;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path22 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 233;
+          animation: dash22 5s linear forwards;
+        }
+        @keyframes dash22{
+          0%,
+          33%{
+            stroke-dashoffset: 233;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path23 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 234;
+          animation: dash23 5s linear forwards;
+        }
+        @keyframes dash23{
+          0%,
+          33%{
+            stroke-dashoffset: 234;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path24 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 235;
+          animation: dash24 5s linear forwards;
+        }
+        @keyframes dash24{
+          0%,
+          33%{
+            stroke-dashoffset: 235;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path25 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 236;
+          animation: dash25 5s linear forwards;
+        }
+        @keyframes dash25{
+          0%,
+          33%{
+            stroke-dashoffset: 236;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }
+
+        #path26 {
+          stroke-width: 12;
+          clip-path: url("#cp3");
+          stroke-dasharray: 237;
+          animation: dash26 5s linear forwards;
+        }
+        @keyframes dash26{
+          0%,
+          33%{
+            stroke-dashoffset: 237;
+          }
+          66%{
+            stroke-dashoffset: 0;
+          }
+        }           
+    </style>
     <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
 </head>
 <body>
+    <h1>
+        lab08 漢字書寫 (鉛筆字) (毛筆字也OK!) Path Animation
+    </h1>
+    <div>
+      限定使用 D3.js，參考以下影片。
+    	<ul>
+    		<li><a href="https://bl.ocks.org/basilesimon/f164aec5758d16d51d248e41af5428e4">Animate path in D3</a></li>
+    		<li><a href="https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation">"Self-Drawing" SVG</a></li>
+    		<li><a href="https://stackoverflow.com/questions/15275362/how-to-transition-a-path-in-d3-js">How to transition a path in d3.js</a></li>
+        <li><a href="https://css-tricks.com/svg-line-animation-works/">How SVG Line Animation Works</a></li>
+        <li><a href="http://blog.roachking.net/blog/2014/10/31/osolve-team-drawing-animation/">使用 SVG 將圖片做成動畫</a></li>
+        <li><a href="https://www.hesyifei.com/">何一非</a></li>
+    	</ul>
+    </div>
+
+    <div>
+  		<video width="400" controls loop autoplay>
+  		  <source src="3.mp4" type="video/mp4">
+  		</video>
+    </div>
+
+    <div>
+      展示區 (姓名)
+      <hr>
+      <img width="256" src="./uni9EC3_FZSJSK--GBK1-0.svg">
+      <img width="256" src="./uni798E_FZSJSK--GBK1-0.svg">
+      <img width="256" src="./uni5B89_FZSJSK--GBK1-0.svg">
+    </div>
+
+    <div>
+      Drag and Drop 展示區 (接收任何SVG)
+      <hr>
+      <img width="256" src="./Huang_1.svg">
+      <img width="256" src="./Zhen_1.svg">
+      <img width="256" src="./An_1.svg">
+    </div>
+      
+    <div>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        version="1.1" 
+        width="532"
+        height="512"
+        viewBox="-10 0 266 256"
+        id="svgline">
+        <defs>
+          <clipPath id="cp">
+            <path
+              fill="currentColor"
+              d="M113 182q1 6 0 13q-8 18 -32 33q-4 1 -5 0q0 -1 3 -3q28 -20 32 -44q1 -3 2 1zM127 196q-6 -2 0 -2q49 11 70 29q3 2 3 4q0 3 -3 4q-13 2 -17 -4q-17 -19 -53 -31zM131 97q-3 2 -3 1q-2 1 -1 3q5 -3 4 -4zM199 79q4 -5 13 -1q4 2 13 7q3 1 4 1q3 3 2 5q-2 3 -6 1 q-12 -3 -27 -2q-14 0 -47 5q-1 1 -2 1q-9 0 -23 8q-1 2 -1 7v13q16 -3 24 -3q9 -1 18 -1q5 0 13 11q2 5 6 4q6 6 0 10q-3 1 -6 6q-16 20 -34 31q-13 9 -19 -2q-4 -3 2 -2q4 2 17 -5q25 -14 27 -37q-1 -10 -9 -12q-9 -3 -39 6q0 3 -1 8q-1 6 0 9q5 -1 7 -3q1 -1 5 -2 q-1 0 2 -1h10q3 3 -1 5q-9 2 -23 7q0 6 -1 11h4q3 -1 5 -2q2 0 4 -2l1 -1h1q2 -2 5 -2q10 0 14 1q2 3 -5 6q-16 2 -41 9q0 7 -3 6q-6 1 -9 -4q-2 -2 -4 -2q-1 3 -7 -3q-4 -4 0 -8q3 -2 0 -5q-10 -13 -11 -23q1 -4 9 -11q5 -3 1 2q-6 6 -4 10q3 19 9 23q4 2 6 6q1 3 5 3 q3 -1 5 1l10 -2v-12q-8 3 -19 4q-4 0 0 -2q1 0 4 -1q11 -3 15 -6q1 -9 1 -18q-17 8 -28 7q-2 -2 1 -3q23 -7 27 -9q-2 -10 -1 -20q-1 1 -2 1t-2 1q-5 1 -1 -1q1 -1 3 -2q1 0 2 -1q-2 -2 -1 -3q-65 16 -84 22q-11 3 -19 1q-3 0 -2 -1q0 -1 3 -2q8 -2 17 -4q105 -26 152 -31 q8 1 15 -7zM144 -6q4 -1 13 3q5 2 1 7q-2 4 -5 15q-3 7 -5 14q4 -1 12 -2q12 -2 17 -7q4 -3 10 -2t13 5q2 1 1 3t-4 2q-27 2 -51 9q-5 17 -9 25h4q3 -1 5 -2q6 3 3 9q-23 4 -45 11q-4 2 -6 -1q-1 -3 2 -5q33 -9 38 -37q-4 2 -14 4q-10 3 -14 4q0 3 2 12q1 3 2 4q-1 5 -7 5 q-2 0 -8 -9q-3 -5 -4 -7q-22 5 -35 5h-4q0 -1 4 -3q4 -1 22 -5q10 -3 12 -4q-3 -12 -11 -25q-2 -3 -1 -4t4 1q15 13 21 24q24 -5 33 -8q2 -7 4 -19q2 -6 3 -10v-1q2 -7 -4 -9q-4 -1 1 -2z"
+              style="fill:none;stroke:#ff0000;stroke-opacity:12" />
+          </clipPath>   
+        </defs>
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 49.030588,59.331765 c 0,0 51.501172,-11.14353 77.101172,-17.769412 25.6,-6.625882 52.70589,-12.047059 52.70589,-12.047059 l 6.3247,-1.505882 22.58824,2.409412"
+          id="path835" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 76.738824,12.950588 c 0.903529,1.204706 28.009416,27.614118 34.635296,59.331765"
+          id="path839" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 136.67294,-7.8305882 18.37177,7.22823526 c 0,0 -18.67295,66.25882394 -25.29883,74.99294094"
+          id="path843" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 91.79765,84.028235 c 0,0 49.99529,-18.371764 63.54823,-17.769411"
+          id="path845" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 0.541176,124.08471 c 0,0 60.837648,-10.54118 100.894114,-20.78118 40.05647,-10.240001 93.06353,-15.661177 93.06353,-15.661177 l 10.84236,-6.324706 35.23764,12.348235"
+          id="path847" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 93.00235,117.45882 c 0,0 -12.649409,11.44471 -13.251762,17.76942 -0.602353,6.3247 11.143532,21.6847 11.143532,25.90117 0,4.21647 1.2047,8.43294 1.2047,8.43294 0,0 7.83059,0 11.44471,2.71059 3.61412,2.71059 3.61412,-0.90353 3.61412,-0.90353"
+          id="path849" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 86.978824,138.54118 C 91,138 162.87529,114.74824 168.89882,122.88 c 6.02353,8.13176 11.74589,17.16706 11.74589,17.16706 0,0 -8.43295,17.76941 -19.87765,27.10588 -11.44471,9.33647 -38.85177,20.78118 -38.85177,20.78118"
+          id="path853" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 92,158 c 0,0 21.48235,-3.19529 29.31294,-6.50824 7.83059,-3.31294 35.23765,-10.24 35.23765,-10.24"
+          id="path855" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 121.61412,91.256471 -1.50588,90.051769"
+          id="path857" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 99,175 c 0,0 58.15294,-17.18353 62.36941,-17.78588"
+          id="path859" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 111.97647,177.69412 -2.40941,18.97412 c 0,0 -29.515295,38.24941 -41.863531,39.45411"
+          id="path861" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 117.09647,193.65647 c 0,0 41.56235,7.83059 52.70588,18.07059 11.14353,10.24 31.92471,21.98588 33.12941,22.28706"
+          id="path863" />
+      </svg>
+
+
+
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        version="1.1" 
+        width="532"
+        height="512"
+        viewBox="-10 0 266 256"
+        id="svgline">
+        <!--<defs>-->
+        <clipPath id="cp2">
+          <path
+            fill="currentColor"
+            d="M154 71q-6 -9 -3 -17q1 -4 1 -10v-22q0 -9 -7 -18q-2 -3 2 -1q17 15 13 16q-2 8 -1 19q18 -4 24 -11q3 -5 8 -4l14 2q1 1 1 3q-1 1 -2 1q-8 0 -16 3q-18 9 -29 9q0 15 -1 27v2q10 -4 18 -6q6 -1 20 12q1 2 1 4q0 3 -3 6v8q-1 12 1 44q1 14 2 20v15q0 1 -1 4v5q-1 2 -1 3 t-1 1q-2 1 -5 -3q-5 -6 -13 -11q-3 -1 -10 -4q-3 -2 -4 -3q-31 44 -65 55q-4 0 -1 -1q38 -20 69 -67q1 -3 -2 -2q-40 18 -43 23q-7 6 -7 0q0 -5 5 -9q2 -1 3 -2q2 -2 2 0t8 -3q0 -2 -4 -7q-1 0 -1 -1q-2 -3 0 -9q-1 -3 1 -5q0 -10 2 -30q0 -8 -2 -14q-1 -3 1 -1q0 2 2 3 q1 2 2 3q1 3 1 6q-5 26 2 54q25 -10 32 -15l2 -2q3 -1 8 0q1 0 1 2q0 1 -1 2q-6 3 -13 17q7 5 22 7q7 1 7 -4q-1 -9 -3 -31q-1 -11 -2 -25t-3 -32q0 -9 -9 -9q-5 1 -12 4q-2 1 -3 1q-4 3 -10 2q-2 0 -1 -1l1 -1q1 0 3 -1q0 1 0 -1zM80 204q2 2 7 11q1 2 3 5q1 5 0 7 q-2 1 -6 0q-4 -4 -7 -11q-7 -12 -12 -14q-2 -1 -2 -3q1 -1 4 -2q5 -1 5 -7q-1 -13 -1 -36t1 -44v-9q1 -4 1 -6q-6 11 -18 41q-17 36 -27 45q-3 3 0 -2q9 -12 27 -54q3 -10 13 -30q2 -5 4 -9q-6 3 -15 8q-7 4 -16 8q-4 4 -17 -2q-2 0 0 -1q7 3 17 -3q26 -11 40 -21q4 -2 3 -9 q0 -2 2 -2q3 -1 3 0q1 0 5 1q2 1 6 1q2 0 2 3q0 4 -3 3q-8 -1 -16 12q-3 4 -5 21q22 9 25 14q1 2 0 4q-1 3 -3 1q-12 -6 -22 -17q-5 32 -2 78q-1 17 4 19zM169 187q-4 -3 2 -2q48 25 56 38q1 6 -5 6q-9 -1 -13 -8q-13 -17 -40 -34zM69 18q-3 -4 2 -1q11 12 24 16q6 6 0 9 q-11 1 -26 -24zM154 98q10 -3 14 0q1 1 0 2q-3 3 -8 4q-3 1 -2 1q-4 1 -6 2q-5 5 -4 1q2 -1 -6 -1q-5 1 -1 -1q10 -4 10 -6t3 -2zM138 127q13 0 19 -5q-1 -2 8 -2q2 0 3 1v1q-1 2 -3 3q-6 3 -8 5q-4 4 -2 -1q0 -2 -3 -1q-8 4 -15 2q-2 -2 1 -3z"
+            style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+        </clipPath>   
+        <!--</defs>-->
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 66.197647,12.649412 c 0,0 14.155294,18.974117 19.576471,21.684706 C 91.19529,37.044706 102.64,39.152941 102.64,39.152941"
+          id="path01" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M 13.190588,98.183529 36.381176,101.79765 78.847059,80.715294 97.52,61.138824 72.221176,91.557647 47.825882,146.67294 c 0,0 -20.178823,40.05647 -25.901176,43.36941"
+          id="path02" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 79.148235,77.402353 -6.625882,64.150587 1.807059,55.71765 -4.216471,4.81882 c 0,0 19.877647,23.49177 22.287059,31.02118"
+          id="path03" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 71.92,104.50824 c 0,0 19.57647,7.83058 26.80471,14.45647 7.22823,6.62588 10.24,9.33647 10.24,9.33647"
+          id="path04" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 138.17882,-2.1082353 c 0,0 15.66118,11.1435294 18.07059,18.3717643 -1.50588,43.068236 -2.10823,55.115295 1.20471,62.945883"
+          id="path05" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 144.20235,39.755294 c 0,0 20.17883,0.602353 29.81647,-3.614118 9.63765,-4.21647 15.36,-10.24 15.36,-10.24 l 24.09412,2.409412"
+          id="path06" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 123.72235,83.425882 c 1.20471,1.204706 6.72736,12.301402 7.25977,18.583838 -2.3426,34.8196 -1.688,43.45852 -1.688,43.45852 l 5.87294,22.73882"
+          id="path07" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 140.99142,74.750338 18.63435,-2.555567 17.35656,-6.175954 c 0,0 12.77783,3.726868 13.41672,11.180606 0.6389,7.453737 0.63983,64.653787 3.62039,72.727177 0.21296,12.77784 0.63889,22.36122 0.63889,22.36122 l -1.70371,7.24077 c 0,0 -15.75933,-11.07413 -32.37052,-16.39822 -16.61118,-5.3241 -11.50005,-3.40743 -11.50005,-3.40743"
+          id="path08" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 133.36,107.21882 c 3.61412,-0.30117 37.04471,-7.830585 39.75529,-11.143526"
+          id="path09" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 132.75765,128 c 0,0 25.6,3.01176 39.75529,-11.14353"
+          id="path10" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 108.06118,173.17647 c 14.45647,-3.61412 72.58353,-35.23765 74.69176,-35.53882"
+          id="path11" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 171.91059,134.32471 c 0,0 -8.13177,34.03294 -27.70824,49.69411 C 121.91529,205.10118 112.88,211.12471 112.88,211.12471 l -25.298824,12.34823"
+          id="path12" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 159.86353,182.81412 c 0,0 39.45412,16.5647 48.79059,28.91294 12.64941,12.04706 22.58823,21.08235 22.58823,21.08235"
+          id="path13" />
+      </svg>
+
+
+
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        version="1.1" 
+        width="550"
+        height="512"
+        viewBox="-10 0 266 256"
+        id="svgline">
+        <!--<defs>-->
+        <clipPath id="cp3">
+          <path
+          fill="currentColor"
+          d="M118 18q21 4 31 14q15 0 21 1h12q11 2 20 17q1 4 0 6q-2 2 -4 0q-6 -4 -20 0q-8 4 -23 6q-3 0 -4 -1q0 -1 3 -2q15 -5 30 -14q6 -4 0 -9q-12 -3 -33 0q2 9 -5 8q-11 1 -17 -4q-12 6 -22 10q-5 3 -9 1q-9 3 0 18q3 8 -3 7q-6 2 -7 -6q-5 -18 10 -20q2 0 8 -3q2 0 5 -2 q10 -4 17 -7q-1 0 -1 -1q-1 -3 -1 -7q0 -3 -10 -9q-2 0 -1 -2q1 -1 3 -1zM128 83q3 2 7 6q2 2 4 2q6 4 0 8q-4 1 -17 26q4 0 15 -1q13 -1 18 -2q5 -16 1 -19q-3 -4 2 -2q5 3 12 7q3 2 3 3t-3 3q-4 2 -5 7q25 -3 45 -3q4 -11 19 -2q3 3 12 9q4 4 10 7q2 3 -1 6q-6 4 -15 -6 q-12 -9 -25 -10q-13 -2 -46 2q-10 21 -24 42q3 3 10 6q38 22 50 27q9 5 4 9q-4 6 -11 0q-26 -18 -57 -38q-34 34 -84 39q-7 -1 0 -2q48 -9 79 -41q-11 -6 -24 -12l-5 5q-3 2 -3 -2q-1 -9 2 -11q5 -8 10 -17q-6 2 -11 2q-56 10 -87 19q-8 4 -10 -3q-2 -3 1 -2q5 1 10 0t14 -3 q26 -7 85 -16q14 -32 12 -41q-2 -2 -1 -3q1 0 4 1zM120 128q-3 7 -9 17l-2 4q2 2 10 6q7 3 15 7q11 -14 19 -37q-6 1 -17 2t-16 1z"
+          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+        </clipPath>   
+        <!--</defs>-->
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 112.27765,16.865882 c 0,0 33.12941,14.155294 30.41882,23.190589"
+          id="path21" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 98,50 c 0,0 -17.647059,5.416471 -2.28706,30.112941"
+          id="path22" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 98,51 41.68471,-15.16 c 0,0 45.17647,-7.529412 51.2,3.915294 6.02353,11.444706 7.83058,12.047059 7.83058,12.047059 0,0 -34.33411,-0.301177 -49.99529,11.444706"
+          id="path23" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 120.10824,78.908235 15.05882,15.36 c 0,0 -31.32235,55.416475 -31.02118,56.018825 0.30118,0.60235 83.72706,38.85176 107.21883,63.84941"
+          id="path24" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 164.98353,98.785882 c 0,0 -15.36,56.319998 -32.22588,70.776468 -16.86589,14.45647 -34.03294,24.69647 -34.03294,24.69647 0,0 -49.392945,18.37177 -60.837651,16.26353"
+          id="path25" />
+        <path
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="M -4.5788235,146.97412 8.371765,148.17882 79.148235,133.12 c 0,0 32.527055,-5.42118 45.778825,-6.62588 13.25176,-1.20471 68.06588,-6.62588 68.06588,-6.62588 l 21.68471,0.60235 5.12,-3.31294 26.20235,18.37176 11.44471,6.92706"
+          id="path26" />
+      </svg>
+    </div>
+
     <script type="text/javascript">
       // Your beautiful D3 code will go here
+      var path1 = document.querySelector('#path835');
+      var path2 = document.querySelector('#path839');
+      var path3 = document.querySelector('#path843');
+      var path4 = document.querySelector('#path845');
+      var path5 = document.querySelector('#path847');
+      var path6 = document.querySelector('#path849');
+      var path7 = document.querySelector('#path853');
+      var path8 = document.querySelector('#path855');
+      var path9 = document.querySelector('#path857');
+      var path10 = document.querySelector('#path859');
+      var path11 = document.querySelector('#path861');
+      var path12 = document.querySelector('#path863');
+
+      var length1 = parseInt( path1.getTotalLength() );
+      var length2 = parseInt( path2.getTotalLength() );
+      var length3 = parseInt( path3.getTotalLength() );
+      var length4 = parseInt( path4.getTotalLength() );
+      var length5 = parseInt( path5.getTotalLength() );
+      var length6 = parseInt( path6.getTotalLength() );
+      var length7 = parseInt( path7.getTotalLength() );
+      var length8 = parseInt( path8.getTotalLength() );
+      var length9 = parseInt( path9.getTotalLength() );
+      var length10 = parseInt( path10.getTotalLength() );
+      var length11 = parseInt( path11.getTotalLength() );
+      var length12 = parseInt( path12.getTotalLength() );
+      
     </script>
-  </body>
-</html>
+  </html>
   
