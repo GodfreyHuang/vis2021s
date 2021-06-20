@@ -11,14 +11,33 @@
             height: 200%;
             background-image: url("wellybackground.png");
         }
+        
+        .center {
+            margin:0 auto;
+            text-align:center;
+        }
+
+        #dataset-section {
+			overflow: hidden;
+            background-color: rgb(117, 236, 236);
+            opacity: 0.9;
+            font-size: 18px;
+        }
+
         #training-section {
             height: 100%;
 			overflow: hidden;
+            background-color: rgb(150, 204, 235);
+            opacity: 0.9;
+            font-size: 18px;
         }
 
         #testing-section {
             height: 100%;
 			overflow: hidden;
+            background-color: rgb(138, 163, 233);
+            opacity: 0.9;
+            font-size: 18px;
             /*background-color: rgb(219, 233, 233);
             opacity: 0.3;*/
         }
@@ -64,17 +83,17 @@
     
         <div id="left">
             <div id="dataset-section">
-                <h1>
+                <h1 class="center">
                     資料集的主要說明
                 </h1>
             </div>
             <div id="training-section">
-                <h1>
+                <h1 class="center">
                     訓練資料集的部分
                 </h1>
             </div>
             <div id="testing-section">
-                <h1>
+                <h1 class="center">
                     測試資料集的部分
                 </h1>
             </div>
@@ -89,9 +108,20 @@
         <script src="./lib/binarydecisiontree.min.js"></script>
 
         <script>
-            var LipsumDataset = "說明文字1";
-            var LipsumTrainDataset = "說明文字2";
-            var LipsumTestDataset = "說明文字3";
+            var LipsumDataset1 = "此資料來自網絡異常檢測資料集。";
+            var LipsumDataset2 = "資料來源：https://www.kaggle.com/anushonkar/network-anamoly-detection?select=Train.txt";
+            var LipsumTrainDataset1 = "訓練出來的二分樹如右圖所式以下是右圖訓練樹有使用到的參數:"
+            var LipsumTrainDataset2 = "Src_bytes: Number of data bytes transferred from source to destination in single connection"; 
+            var LipsumTrainDataset3 = "在一次連接中從來源端到目的端傳輸的資料bytes數"; 
+            var LipsumTrainDataset4 = "Dst_hostsrv diff_host_rate: The percentage of connections that were to different destination"; 
+            var LipsumTrainDataset5 = "連接到不同目的地的百分比"; 
+            var LipsumTrainDataset6 = "Protocol_type: Protocol used in the connection"; 
+            var LipsumTrainDataset7 = "在該次連接所使用的網路協議"; 
+            var LipsumTrainDataset8 = "Diff_srv_rate: The percentage of connections that were to different services, among the connections"; 
+            var LipsumTrainDataset9 = "連接中不同服務的連接百分比"; 
+            var LipsumTrainDataset10 = "Dst_host_count: Number of connections having the same destination host IP address"; 
+            var LipsumTrainDataset11 = "具有相同目的主機IP地址的連接數";
+            var LipsumTestDataset = "灰點為沒遭受攻擊，紅點為遭受攻擊，結果為94.4%的準確率";
 
             window.onload = function () {
                 function resizeRight(){
@@ -116,7 +146,10 @@
                     .data(d3.range(1, 2))
                     .enter()
                     .append("p")
-                    .text(LipsumDataset)
+                    .text(LipsumDataset1)
+                    .append("p")
+                    //.append("font-size", "14")
+                    .text(LipsumDataset2)                    
                 ;
 
                 d3.select("#training-section")
@@ -124,7 +157,27 @@
                     .data(d3.range(1, 2))
                     .enter()
                     .append("p")
-                    .text(LipsumTrainDataset)
+                    .text(LipsumTrainDataset1)
+                    .append("p")
+                    .text(LipsumTrainDataset2)
+                    .append("p")
+                    .text(LipsumTrainDataset3)
+                    .append("p")
+                    .text(LipsumTrainDataset4)
+                    .append("p")
+                    .text(LipsumTrainDataset5)
+                    .append("p")
+                    .text(LipsumTrainDataset6)
+                    .append("p")
+                    .text(LipsumTrainDataset7)
+                    .append("p")
+                    .text(LipsumTrainDataset8)
+                    .append("p")
+                    .text(LipsumTrainDataset9)
+                    .append("p")
+                    .text(LipsumTrainDataset10)
+                    .append("p")
+                    .text(LipsumTrainDataset11)
                 ;
 
                 d3.select("#testing-section")
@@ -135,25 +188,25 @@
                     .text(LipsumTestDataset)
                 ;
 				
-				/*d3.select("#training-section")
+				d3.select("#dataset-section")
                     .selectAll("img")
-					.data(d3.range(1, 4))
+					.data(d3.range(1, 2))
 					.enter()
 					.append("img")
 					.attr("src", function(d){ return "media/" + d + ".png"})
-                    .style('height', '350px')
-                    .style('width', '350px')
+                    .style('height', '162px')
+                    .style('width', '730px')
                 ;
 
                 d3.select("#testing-section")
                     .selectAll("img")
-					.data(d3.range(4, 7))
+					.data(d3.range(2, 3))
 					.enter()
 					.append("img")
 					.attr("src", function(d){ return "media/" + d + ".png"})
-                    .style('height', '350px')
-                    .style('width', '350px')
-                ;*/
+                    .style('height', '700px')
+                    .style('width', '700px')
+                ;
 				
 				
 
