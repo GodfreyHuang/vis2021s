@@ -18,6 +18,7 @@
         }
 
         #dataset-section {
+            /*height: 30%;*/
 			overflow: hidden;
             background-color: rgb(117, 236, 236);
             opacity: 0.9;
@@ -25,7 +26,7 @@
         }
 
         #training-section {
-            height: 100%;
+            height: 60%;
 			overflow: hidden;
             background-color: rgb(150, 204, 235);
             opacity: 0.9;
@@ -33,13 +34,21 @@
         }
 
         #testing-section {
-            height: 100%;
+            height: 60%;
 			overflow: hidden;
             background-color: rgb(138, 163, 233);
             opacity: 0.9;
             font-size: 18px;
             /*background-color: rgb(219, 233, 233);
             opacity: 0.3;*/
+        }
+
+        #ussr-section {
+            /*height: 100%;*/
+			overflow: hidden;
+            background-color: rgb(228, 7, 7);
+            /*opacity: 0.9;*/
+            font-size: 18px;
         }
 
         #train-vs-test {
@@ -86,16 +95,24 @@
                 <h1 class="center">
                     資料集的主要說明
                 </h1>
+                <h3>先來簡單說明一下我們使用的資料集......<h3>
             </div>
+            <br>
             <div id="training-section">
                 <h1 class="center">
                     訓練資料集的部分
                 </h1>
             </div>
+            <br>
             <div id="testing-section">
                 <h1 class="center">
                     測試資料集的部分
                 </h1>
+            </div>
+            <br>
+            <embed src="ussrAnthem.mp3">
+            <div id="ussr-section">
+                
             </div>
         </div>
         <!--</div>-->
@@ -110,6 +127,12 @@
         <script>
             var LipsumDataset1 = "此資料來自網絡異常檢測資料集。";
             var LipsumDataset2 = "資料來源：https://www.kaggle.com/anushonkar/network-anamoly-detection?select=Train.txt";
+            var LipsumDataset3 = "隨著電腦網絡使用量的大幅增長以及在其上運行的應用程式數量大量增加，資訊安全的重要性不可言喻。 \
+            所有電腦系統都存在安全漏洞，系統製造商要解決這些漏洞在技術上和經濟上都很困難。因此入侵檢測系統（IDSs）作為檢測網路異常和攻擊的專用設備的作用變得越來越重要。";
+            var LipsumDataset4 = "長久以來，入侵檢測領域的研究主要集中於anomaly-based和misuse-based的檢測技術上。雖然misuse-based檢測因其可預測性和高精度而在商業產品中普遍受到青睞，但在學術研究中anomaly-based檢測通常被認為是一種更好解決新型攻擊的方法。";
+
+            var LipsumTrainTotal1 = "原資料集擁有大量參數，如下列所示:";
+
             var LipsumTrainDataset1 = "訓練出來的二分樹如右圖所式以下是右圖訓練樹有使用到的參數:"
             var LipsumTrainDataset2 = "Src_bytes: Number of data bytes transferred from source to destination in single connection"; 
             var LipsumTrainDataset3 = "在一次連接中從來源端到目的端傳輸的資料bytes數"; 
@@ -121,7 +144,10 @@
             var LipsumTrainDataset9 = "連接中不同服務的連接百分比"; 
             var LipsumTrainDataset10 = "Dst_host_count: Number of connections having the same destination host IP address"; 
             var LipsumTrainDataset11 = "具有相同目的主機IP地址的連接數";
-            var LipsumTestDataset = "灰點為沒遭受攻擊，紅點為遭受攻擊，結果為94.4%的準確率";
+            var LipsumTrainDataset12 = "原資料集擁有的參數除結果外多達42種，但實際上決策樹用於分類的參數只有上述五種。";
+
+            var LipsumTestDataset1 = "如右方svg所示，灰點為沒遭受攻擊，紅點為遭受攻擊，結果為94.4%的準確率。";
+            var LipsumTestDataset2 = "以下為畫出來的二元樹:";
 
             window.onload = function () {
                 function resizeRight(){
@@ -149,7 +175,11 @@
                     .text(LipsumDataset1)
                     .append("p")
                     //.append("font-size", "14")
-                    .text(LipsumDataset2)                    
+                    .text(LipsumDataset2)   
+                    .append("p")
+                    .text(LipsumDataset3)     
+                    .append("p")
+                    .text(LipsumDataset4)              
                 ;
 
                 d3.select("#training-section")
@@ -178,6 +208,10 @@
                     .text(LipsumTrainDataset10)
                     .append("p")
                     .text(LipsumTrainDataset11)
+                    //.attr("br")
+                    //.text(LipsumTrainDataset11)
+                    .append("p")
+                    .text(LipsumTrainDataset12)
                 ;
 
                 d3.select("#testing-section")
@@ -185,7 +219,9 @@
                     .data(d3.range(1, 2))
                     .enter()
                     .append("p")
-                    .text(LipsumTestDataset)
+                    .text(LipsumTestDataset1)
+                    .append("p")
+                    .text(LipsumTestDataset2)
                 ;
 				
 				d3.select("#dataset-section")
@@ -204,12 +240,31 @@
 					.enter()
 					.append("img")
 					.attr("src", function(d){ return "media/" + d + ".png"})
-                    .style('height', '700px')
-                    .style('width', '700px')
+                    .style('height', '750px')
+                    .style('width', '750px')
+                ;
+
+                d3.select("#training-section")
+                    .selectAll("img")
+					.data(d3.range(3, 4))
+					.enter()
+					.append("img")
+					.attr("src", function(d){ return "media/" + d + ".png"})
+                    .style('height', '260px')
+                    .style('width', '754px')
+                ;
+
+                d3.select("#ussr-section")
+                    .selectAll("img")
+					.data(d3.range(4, 5))
+					.enter()
+					.append("img")
+					.attr("src", function(d){ return "media/" + d + ".png"})
+                    .style('height', '760px')
+                    .style('width', '750px')
                 ;
 				
-				
-
+			
                 var bdt = new BinaryDecisionTree({
                     el: "#train-vs-test",
                     trainingSection: "#training-section",
