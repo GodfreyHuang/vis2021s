@@ -234,19 +234,9 @@
                     .style('width', '730px')
                 ;
 
-                d3.select("#testing-section")
-                    .selectAll("img")
-					.data(d3.range(2, 3))
-					.enter()
-					.append("img")
-					.attr("src", function(d){ return "media/" + d + ".png"})
-                    .style('height', '750px')
-                    .style('width', '750px')
-                ;
-
                 d3.select("#training-section")
                     .selectAll("img")
-					.data(d3.range(3, 4))
+					.data(d3.range(2, 3))
 					.enter()
 					.append("img")
 					.attr("src", function(d){ return "media/" + d + ".png"})
@@ -254,9 +244,19 @@
                     .style('width', '754px')
                 ;
 
+                d3.select("#testing-section")
+                    .selectAll("img")
+					.data(d3.range(3, 5))
+					.enter()
+					.append("img")
+					.attr("src", function(d){ return "media/" + d + ".png"})
+                    .style('height', '800px')
+                    .style('width', '800px')
+                ;
+
                 d3.select("#ussr-section")
                     .selectAll("img")
-					.data(d3.range(4, 5))
+					.data(d3.range(5, 6))
 					.enter()
 					.append("img")
 					.attr("src", function(d){ return "media/" + d + ".png"})
