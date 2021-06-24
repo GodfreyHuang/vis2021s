@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="utf-8">
@@ -32,10 +34,23 @@
       div {
         font-family: 'Noto Serif JP', serif;
         font-size: 12pt;
+        border: solid 1px blue;
+        width: 90%;
+        margin: 15px auto;
+        padding: 10px;
+      }
+
+      ul {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 12pt;
         border: solid 1px black;
         width: 90%;
         margin: 5px auto;
         padding: 10px;
+      }
+
+      li {
+        margin: 2px 20px;
       }
 
       iframe:hover, div:hover, ul:hover, h1:hover, h3:hover {
@@ -47,74 +62,192 @@
       iframe {
         border: 1px black solid;
       }
+
+      /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs */
+      body {
+        font-family: Arial;
+      }
+
+      /* Style the tab */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #fcc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: #ffc;
+        float: left;
+        border: 1px solid #fcc;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        margin-right: 5px;
+        box-shadow: 0px 0px 3px 3px rgba(128, 255, 255, 0.5);
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+      /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_tabs */
+
+
     </style>
 </head>
 <body>
 
+<!--
+<h1>資料視覺化 作品集 Data Visualization Portfolio </h1>
+-->
 
-
-<h1>作品集 portfolio</h1>
-
-<h3> lab 00: </h3>
-<div>
-    <iframe src="./lab00/index.html" width="100%" height="1400" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'content')">content</button>
+  <button class="tablinks" onclick="openCity(event, 'lab00')">00</button>
+  <button class="tablinks" onclick="openCity(event, 'lab01')">01</button>
+  <button class="tablinks" onclick="openCity(event, 'lab02')">02</button>
+  <button class="tablinks" onclick="openCity(event, 'lab03')">03</button>
+  <button class="tablinks" onclick="openCity(event, 'lab04')">04</button>
+  <button class="tablinks" onclick="openCity(event, 'lab05')">05</button>
+  <button class="tablinks" onclick="openCity(event, 'lab06')">06</button>
+  <button class="tablinks" onclick="openCity(event, 'lab07')">07</button>
+  <button class="tablinks" onclick="openCity(event, 'lab08')">08</button>
+  <button class="tablinks" onclick="openCity(event, 'lab09')">09</button>
+  <button class="tablinks" onclick="openCity(event, 'lab09sol')">09 sol</button>
+  <button class="tablinks" onclick="openCity(event, 'lab10')">10</button>
+  <button class="tablinks" onclick="openCity(event, 'lab11')">11</button>
+  <button class="tablinks" onclick="openCity(event, 'lab12')">12</button>
+  <button class="tablinks" onclick="openCity(event, 'lab13')">13</button>
+  <button class="tablinks" onclick="openCity(event, 'lab14')">14</button>
+  <button class="tablinks" onclick="openCity(event, 'lab66')">66</button>
+  <button class="tablinks" onclick="openCity(event, 'lab99')">99</button>
 </div>
 
-<h3> lab 01: </h3>
-<div>
-    <iframe src="./lab01/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="content" class="tabcontent">
+  <li>Lab00 1.svg 個人大頭照 </li>
+  <li>Lab01 電仔 </li>
+  <li>Lab02 tree map </li>
+  <li>Lab03 美國地圖 http.server localhost </li>
+  <li>Lab04 成績單 </li>
+  <li>Lab05 histogram </li>
+  <li>Lab06 stacked barplot </li>
+  <li>Lab07 圓變漢字 </li>
+  <li>Lab08 書寫動畫 </li>
+  <li>Lab09 SVG 字幕 </li>
+  <li>Lab10 </li>
+  <li>Lab11 </li>
+  <li>Lab12 </li>
+  <li>Lab13 </li>  
+  <li>Lab14 臺灣地圖 </li>
+  <li>Lab66 期中計畫 R2D3 Decision Tree Visualization </li>
+  <li>Lab99 期末計畫 Choropleth Map (取消) </li>
 </div>
 
-<h3> lab 02: </h3>
-<div>
-    <iframe src="./lab02/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab00" class="tabcontent">
+    <iframe src="./lab00/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 03: </h3>
-<div>
-    <iframe src="./lab03/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab01" class="tabcontent">
+    <iframe src="./lab01/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 04: </h3>
-<div>
-    <iframe src="./lab04/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab02" class="tabcontent">
+    <iframe src="./lab02/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 05: </h3>
-<div>
-    <iframe src="./lab05/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab03" class="tabcontent">
+    <iframe src="./lab03/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 06: </h3>
-<div>
-    <iframe src="./lab06/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab04" class="tabcontent">
+    <iframe src="./lab04/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 07: </h3>
-<div>
-    <iframe src="./lab07/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab05" class="tabcontent">
+    <iframe src="./lab05/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 08: </h3>
-<div>
-    <iframe src="./lab08/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab06" class="tabcontent">
+    <iframe src="./lab06/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 09: </h3>
-<div>
-    <iframe src="./lab09/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab07" class="tabcontent">
+    <iframe src="./lab07/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 66: 期中計畫 Decision Tree Visualization </h3>
-<div>
-    <iframe src="./lab99/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab08" class="tabcontent">
+    <iframe src="./lab08/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
-<h3> lab 99: 期末計畫  Choropleth Map 階級区分図 </h3>
-<div>
-    <iframe src="./lab99/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+<div id="lab09" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
 </div>
 
+<div id="lab10" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab11" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab12" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab13" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab14" class="tabcontent">
+    <iframe src="./lab09/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab66" class="tabcontent">
+    <iframe src="./lab66/index.html" width="100%" height="700" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+<div id="lab99" class="tabcontent">
+    <iframe src="./lab99/index.html" width="100%" height="1000" seamless="seamless" scrolling="yes" frameborder="0" allowtransparency="true"> </iframe>
+</div>
+
+
+
+
+<script>
+
+openCity(event, 'content');
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 </body>
 </html>
